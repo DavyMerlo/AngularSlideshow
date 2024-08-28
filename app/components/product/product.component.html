@@ -1,0 +1,36 @@
+<div class="slideshow-container">
+    <div class="mySlides fade" *ngFor="let product of products; let i = index" [class.active]="i === currentIndex">
+      <div class="column gap-1 wrapper">
+        <img [src]="product.image" class="slideShowImage" (click)="openOverlay(product.image)">
+      </div>
+      <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+      <a class="next" (click)="plusSlides(1)">&#10095;</a>
+  </div>
+  
+  <div class="thumbnail-container">
+    <img *ngFor="let product of showMaxSlidesInThumbnail(); let i = index"
+         [src]="product.image"
+         [class.active-thumbnail]="i + thumbnailIndex === currentIndex"
+         (click)="setCurrentIndex(i + thumbnailIndex)"
+         alt="Product Thumbnail"
+         class="thumbnail">
+  </div>
+  
+  <div class="overlay" *ngIf="showOverlay" (click)="closeOverlay($event)">
+    <div class="overlay-content-wrapper">
+      <div class="closebutton-container">
+        <span class="close" (click)="closeOverlay($event)">&times;</span>
+      </div>
+      <img class="overlay-content" [src]="overlayImage" alt="Overlay Image">
+     
+      
+      <div class="index-info">
+        <a class="prev overlay-prev" (click)="plusSlidesInOverlay(-1)">&#10094;</a>
+        <p>{{ showCurrentIndexAndTotalCount().currentIndex }} / {{ showCurrentIndexAndTotalCount().totalCount }}</p>
+        <a class="next overlay-next" (click)="plusSlidesInOverlay(1)">&#10095;</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  

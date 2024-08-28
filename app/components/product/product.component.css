@@ -1,0 +1,146 @@
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+.slideShowImage {
+  width: 350px;
+  height: 350px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: 45px;
+  height: 45px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 50%; 
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.next {
+  right: 5px;
+}
+
+.prev {
+  left: 5px;
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  margin: 0 5px;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+  border-radius: 10px;
+}
+
+.thumbnail:hover, .active-thumbnail {
+  opacity: 1;
+  border: 2px solid #555;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay-content-wrapper {
+  height: 660px;
+  width: 600px;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  text-align: center;
+}
+
+.overlay-content {
+  width: 600px;
+  height: 600px;
+  border: 4px solid white;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.closebutton-container {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color: rgb(0, 0, 0);
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  bottom: 4px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.closebutton-container:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.overlay-prev, .overlay-next {
+  top: 92%;
+}
+
+.overlay-prev {
+  left: 10px;
+}
+
+.overlay-next {
+  right: 10px;
+}
+
+.index-info {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 18px;
+  color: #333;
+}
